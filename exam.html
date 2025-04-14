@@ -47,6 +47,7 @@
     .final-result {
       text-align: center;
       margin-top: 30px;
+      display: none;
     }
 
     .final-result button {
@@ -134,7 +135,7 @@
         correctAnswer: 2,
       }
     ];
-
+  
     const الثانيquestions = [
       {
         question: "ما المقصود بالذكاء الاصطناعي؟",
@@ -147,7 +148,7 @@
         correctAnswer: 0,
       }
     ];
-
+  
     const الثالثquestions = [
       {
         question: "ما هو الحوسبة السحابية؟",
@@ -160,24 +161,28 @@
         correctAnswer: 2,
       }
     ];
-
+  
     let currentQuestionIndex = 0;
     let score = 0;
     let selectedQuestions = الأولquestions;
-
+    let selectedLesson = "الأول";
+  
     const languageSelect = document.getElementById("language");
     const questionEl = document.getElementById("question");
     const optionsEl = document.getElementById("options");
     const nextBtn = document.getElementById("next-btn");
     const resultEl = document.getElementById("result");
     const finalResultEl = document.querySelector(".final-result");
-
+  
+    // إخفاء الشهادة في البداية
+    finalResultEl.style.display = "none";
+  
     function loadQuestion() {
       const question = selectedQuestions[currentQuestionIndex];
       questionEl.textContent = question.question;
       optionsEl.innerHTML = "";
       nextBtn.disabled = true;
-
+  
       question.options.forEach((option, index) => {
         const button = document.createElement("button");
         button.className = "list-group-item list-group-item-action option";
@@ -186,33 +191,41 @@
         optionsEl.appendChild(button);
       });
     }
-
+  
     function selectAnswer(button, index) {
       const question = selectedQuestions[currentQuestionIndex];
       const allOptions = document.querySelectorAll(".option");
+  
       allOptions.forEach((btn, i) => {
         btn.classList.remove("active");
         btn.classList.add(i === question.correctAnswer ? "correct" : "incorrect");
       });
-
+  
       button.classList.add("active");
+  
       if (index === question.correctAnswer) {
         score += 10;
       } else {
         score -= 5;
       }
-
+  
       nextBtn.disabled = false;
     }
-
+  
     function showResult() {
       questionEl.textContent = "انتهى الاختبار";
       optionsEl.innerHTML = "";
       nextBtn.style.display = "none";
       resultEl.textContent = `درجتك: ${score} من ${selectedQuestions.length * 10}`;
-      finalResultEl.style.display = "block";
+  
+      // فقط لو الدرس الثالث
+      if (selectedLesson.trim() === "الثالث") {
+        finalResultEl.style.display = "block";
+      } else {
+        finalResultEl.style.display = "none";
+      }
     }
-
+  
     nextBtn.addEventListener("click", () => {
       currentQuestionIndex++;
       if (currentQuestionIndex < selectedQuestions.length) {
@@ -221,9 +234,11 @@
         showResult();
       }
     });
-
+  
     languageSelect.addEventListener("change", () => {
-      const selectedLanguage = languageSelect.value;
+      const selectedLanguage = languageSelect.value.trim();
+      selectedLesson = selectedLanguage;
+  
       if (selectedLanguage === "الأول") {
         selectedQuestions = الأولquestions;
       } else if (selectedLanguage === "الثاني") {
@@ -231,6 +246,7 @@
       } else if (selectedLanguage === "الثالث") {
         selectedQuestions = الثالثquestions;
       }
+  
       currentQuestionIndex = 0;
       score = 0;
       nextBtn.style.display = "inline-block";
@@ -238,13 +254,15 @@
       finalResultEl.style.display = "none";
       loadQuestion();
     });
-    // اضغط زر إعادة الاختبار
-    document.getElementById('restart').addEventListener('click', function() {
-      // أعد تحميل الاختبار أو قم بإعادة تعيين المتغيرات حسب الحاجة
+  
+    // زر إعادة الاختبار
+    document.getElementById('restart').addEventListener('click', function () {
       location.reload();
     });
+  
     loadQuestion();
   </script>
+  
 </body>
 
 </html>
