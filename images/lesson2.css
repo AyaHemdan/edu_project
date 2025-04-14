@@ -1,0 +1,200 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .wrapper {
+    background: url(images/تنزيل\ \(1\).jfif);
+    background-size: cover;
+  background-position: center;
+  height:1000px;
+  
+  }
+nav {
+    width: 100%;
+    height: 80px;
+    background-color: #a7a5a3 ;
+    line-height: 80px;
+    text-align: center;
+}
+
+nav ul {
+    float:center;
+    margin: 0;
+    margin-right: 1.9rem;
+    
+}
+
+nav ul li {
+    list-style-type: none;
+    display: inline-block;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 20px;
+}
+
+nav ul li:hover {
+    background-color: rgb(133, 193, 233);
+    color: #000;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+h1{
+    text-align: center;
+    font:bold;
+    color: #fffcfc;
+}
+p{
+    font-size: 20px;
+    text-align: right;
+    color: #0c0c0c;
+}
+.p1{
+    font-size: 20px;
+    font:bold;
+    text-align: right;
+    color: #0c0c0c;
+}
+#video-container {
+    max-width: 100%;
+    text-align: center;
+
+}
+.button {
+  --width: 200px;
+  --height: 45px;
+  --tooltip-height: 35px;
+  --tooltip-width: 90px;
+  --gap-between-tooltip-to-button: 18px;
+  --button-color: #1163ff;
+  --tooltip-color: #fff;
+  width: var(--width);
+  height: var(--height);
+  background: var(--button-color);
+  position: relative;
+  text-align: center;
+  border-radius: 0.45em;
+  font-family: "Arial";
+  transition: background 0.3s;
+  display: inline-block;
+}
+
+.button::before {
+  position: absolute;
+  content: attr(data-tooltip);
+  width: var(--tooltip-width);
+  height: var(--tooltip-height);
+  background-color: var(--tooltip-color);
+  font-size: 0.9rem;
+  color: #111;
+  border-radius: .25em;
+  line-height: var(--tooltip-height);
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+  left: calc(50% - var(--tooltip-width) / 2);
+}
+
+.button::after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: var(--tooltip-color);
+  left: calc(50% - 10px);
+  bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+}
+
+.button::after,.button::before {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-wrapper,.text,.icon {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  color: #fff;
+}
+
+.text {
+  top: 0
+}
+
+.text,.icon {
+  transition: top 0.5s;
+}
+
+.icon {
+  color: #fff;
+  top: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.button:hover {
+  background: #6c18ff;
+}
+
+.button:hover .text {
+  top: -100%;
+}
+
+.button:hover .icon {
+  top: 0;
+}
+
+.button:hover:before,.button:hover:after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.button:hover:after {
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+}
+
+.button:hover:before {
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+}
+.buttons{
+  display: inline-block;
+  text-align: center;
+  
+}
+.animated-button {
+  background-color: #F85BAC; /* لون الخلفية الافتراضي */
+  border: none;
+  color: white;
+  padding: 25px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 6px 8px;
+  transition-duration: 0.4s; /* تحديد مدة الانتقال */
+  cursor: pointer;
+}
+
+.animated-button:hover {
+  background-color: #008CBA; /* تغيير لون الخلفية عند التحويم */
+  color: white; /* تغيير لون النص عند التحويم */
+  transform: scale(1.1); /* تكبير حجم الزر عند التحويم */
+}

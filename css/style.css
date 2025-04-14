@@ -1,0 +1,700 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+  .d-block{
+    height: 100vh ;
+  }
+  .header {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 50px;
+    background-color: #778da9;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* ← هنا السحر: وسط العناصر كلها */
+    gap: 30px; /* مسافات بين اللوجو - اللينكات - الزر */
+  }
+  
+  .ul-header {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .img-header {
+    width: 150px;
+    height: 50px;
+    object-fit: contain;
+  }
+  
+  .li-header {
+    color: black;
+    font-size: 15px;
+    padding: 12px;
+    cursor: pointer;
+    
+  }
+  
+  .li-header:hover {
+    background-color: #778da9;
+    color: white;
+  }
+  .a-header {
+    text-decoration: none; /* يشيل الخط */
+  }
+  
+  #container1{
+    width: 100%;
+    height: auto;
+  }
+  .btn.btn-outline-success {
+    border-color: #000;    
+    color: black;       
+  }
+  .btn.btn-outline-success:hover {
+    background-color: #67584E; 
+    border-color: #67584E;     
+    color: #fff;               
+  }
+   .modal-backdrop.show{
+    z-index: -1 !important;
+   }
+  .social-icons {
+        position: fixed;
+        margin-right: 20px;
+        top: 50%;
+        right: 0; /* يمكنك تغييرها إلى right: 0 لتظهر على اليمين */
+        transform: translateY(-50%);
+        z-index: 1000;
+      }
+      
+      /* تصميم الأيقونات */
+      .social-icons a {
+        display: block;
+        width: 50px;
+        height: 50px;
+        color: white;
+        background-color:#023e8a;
+        text-align: center;
+        line-height: 50px;
+        margin: 5px 0;
+        transition: background-color 0.3s;
+        border-radius: 5px;
+      }
+  
+      .social-icons a:hover {
+        background-color: #0077b6;
+      }
+  
+      /* تكبير الأيقونات */
+      .social-icons i {
+        font-size: 24px;
+      }
+      #div_reg_btn {
+        width: 100%;
+        height: auto;
+        background-color: #dee2e6;
+        display: flex;
+        justify-content: center; /* توسيط الزر أفقيًا */
+        align-items: center; /* توسيط الزر عموديًا */
+        margin:  auto;
+      }
+      #btn_reg{
+        padding: 10px 20px;
+        text-transform: uppercase;
+        border-radius: 8px;
+        font-size: 17px;
+        font-weight: 500;
+        color: white;
+        text-shadow: none;
+        background: #003566;
+        cursor: pointer;
+        box-shadow: transparent;
+        border: 1px solid #ffffff80;
+        transition: 0.5s ease;
+        user-select: none;
+      }
+      #btn_reg:hover,
+      :focus{
+        color: #ffffff;
+        background: #008cff;
+        border: 1px solid #008cff;
+        text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+        box-shadow: 0 0 5px #008cff, 0 0 20px #008cff, 0 0 50px #008cff,
+        0 0 100px #008cff;
+      }
+      /* /////////////////////////////////////////////////////////////////////////////////////////introduction */
+      nav {
+        width: 100%;
+        height: 60px;
+        background-color: #021b2b;
+      }
+      
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      
+      nav ul li {
+        display: inline-block;
+      }
+      
+      nav ul li a {
+        text-decoration: none;
+        color: #fff;
+        padding: 14px 20px;
+        display: inline-block;
+      }
+      
+      nav ul li:hover {
+        background-color: rgb(132, 142, 185);
+        color: #000;
+        font-weight: bold;
+        font-size: 1.1rem;
+      }
+      
+      
+      #introduction,
+      #connection,
+      #div_who_we {
+        background-color: #ced4da;
+        text-align: center;
+        height: auto;
+      }
+      #container_introduction h3 {
+        font-size: 2.2rem; /* حجم أكبر للعنوان */
+        font-weight: bold;
+      }
+      
+      #container_introduction p {
+        font-size: 1.4rem; /* حجم أكبر للفقرات */
+        line-height: 2;    /* مسافة مريحة بين السطور */
+      }
+      .img-fixed-size {
+        width: 250px;
+        height: 250px;
+        object-fit: cover; /* يحافظ على تناسق الصورة داخل الحجم */
+      }
+      .loader {
+          width: 150px;
+          height: 150px;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .loader_cube {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border-radius: 30px;
+        }
+        .loader_cube--glowing {
+          z-index: 2;
+          background-color: rgba(255, 255, 255, 0.2);
+          border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .loader_cube--color {
+          z-index: 1;
+          filter: blur(2px);
+          background: linear-gradient(135deg, #1afbf0, #da00ff);
+          animation: loadtwo 2.5s ease-in-out infinite;
+        }
+        
+        @keyframes loadtwo {
+          50% {
+            transform: rotate(-80deg);
+          }
+        } 
+/* ///////////////////////////////////////////////////////////////////////////////////// connection */
+.container {
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.icon__box {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 30%;
+  margin: auto;
+  cursor: pointer;
+}
+
+@media (max-width: 576px) {
+  .p {
+    font-size: 1.2rem;
+  }
+}
+
+/* /////////////////////////////////////////who we */
+.bubble {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 25px rgba(255, 255, 255, 0.25);
+  animation: animate_4010 8s ease-in-out infinite;
+}
+
+.bubble:nth-child(2) {
+  zoom: 0.45;
+  left: -10px;
+  top: -100px;
+  animation-delay: -4s;
+}
+
+.bubble:nth-child(3) {
+  zoom: 0.45;
+  right: -80px;
+  top: -300px;
+  animation-delay: -6s;
+}
+
+.bubble:nth-child(4) {
+  zoom: 0.35;
+  left: -120px;
+  bottom: -200px;
+  animation-delay: -3s;
+}
+
+.bubble:nth-child(5) {
+  zoom: 0.5;
+  left: 0px;
+  top: 200px;
+  animation-delay: -5s;
+}
+
+@keyframes animate_4010 {
+  0%, 100% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+.bubble::before,
+.bubble::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: #fff;
+  z-index: 10;
+  filter: blur(2px);
+}
+
+.bubble::before {
+  top: 50px;
+  left: 45px;
+  width: 30px;
+  height: 30px;
+}
+
+.bubble::after {
+  top: 80px;
+  left: 80px;
+  width: 20px;
+  height: 20px;
+}
+
+.bubble span {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.bubble span:nth-child(1) {
+  inset: 10px;
+  border-left: 15px solid #0fb4ff;
+  filter: blur(8px);
+}
+
+.bubble span:nth-child(2) {
+  inset: 10px;
+  border-right: 15px solid #ff4484;
+  filter: blur(8px);
+}
+/* ///////////////////////////////////////////////////////////////////register */
+.navbar-nav .nav-item .nav-link {
+  padding: 14px 20px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  background-color: rgb(132, 142, 185);
+  color: #000;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* تنسيق النموذج */
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(24, 20, 20, 0.987);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* تنسيق الحقول */
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+.login-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+/* تأثير التركيز على الحقول */
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #bdb8b8;
+  font-size: 12px;
+}
+
+/* تنسيق الرابط */
+.login-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+}
+
+/* تأثير عند التمرير على الرابط */
+.login-box a:hover {
+  background: #03f40f;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03f40f,
+              0 0 25px #03f40f,
+              0 0 50px #03f40f,
+              0 0 100px #03f40f;
+}
+
+/* تأثير الحركة على الرابط */
+.login-box a span {
+  position: absolute;
+  display: block;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+
+  50%, 100% {
+    left: 100%;
+  }
+}
+
+.login-box a span:nth-child(1) {
+  bottom: 2px;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03f40f);
+  animation: btn-anim1 2s linear infinite;
+}
+
+/* تحسينات للتصميم المتجاوب */
+@media (max-width: 768px) {
+  .login-box {
+    width: 80%; /* جعل النموذج يشغل 80% من عرض الشاشة */
+    padding: 20px; /* تقليل الحشو على الأجهزة الصغيرة */
+  }
+
+  .login-box .user-box input {
+    font-size: 14px; /* تقليل حجم الخط على الجوال */
+  }
+
+  .login-box form a {
+    font-size: 14px; /* تقليل حجم الخط على الجوال */
+    letter-spacing: 2px; /* تقليل المسافة بين الحروف على الجوال */
+  }
+}
+
+@media (max-width: 480px) {
+  .login-box {
+    width: 90%; /* جعل النموذج يشغل 90% من عرض الشاشة في الجوال */
+    padding: 15px; /* تقليل الحشو أكثر */
+  }
+
+  .login-box .user-box input {
+    font-size: 12px; /* تقليل حجم الخط أكثر على الجوال */
+  }
+
+  .login-box form a {
+    font-size: 12px; /* تقليل حجم الخط أكثر */
+    letter-spacing: 1px; /* تقليل المسافة بين الحروف أكثر */
+  }
+}
+/* //////////////////////////////////////////////////////////start */
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  border: 1px solid #4f4f4f;
+  border-radius: 4px;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  font-size: 19px;
+  color: black;
+  z-index: 1;
+ }
+ 
+ .button:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+ }
+ 
+ .button:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: #39bda7;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+ }
+ 
+ .button:hover {
+  color: #ffffff;
+  border: 1px solid #39bda7;
+ }
+ 
+ .button:hover:before {
+  top: -35%;
+  background-color: #39bda7;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+ }
+ 
+ .button:hover:after {
+  top: -45%;
+  background-color: #39bda7;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+ }
+/* تصغير حجم عنوان الدرس وتنسيقه */
+.card-title {
+  font-size: 1.1rem; /* حجم أصغر */
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+/* توحيد حجم الصور داخل الكروت */
+.card img {
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* تنسيق الزر */
+.button {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+.button:hover {
+  background-color: #0b5ed7;
+}
+/* الشكل */
+.content-wrapper {
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.content {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Lato', sans-serif;
+  font-size: 28px;
+  line-height: 40px;
+  color: #055d74;
+}
+
+.content__container {
+  font-weight: 600;
+  overflow: hidden;
+  height: 40px;
+  padding: 0 30px;
+  position: relative;
+}
+
+.content__container:before,
+.content__container:after {
+  position: absolute;
+  top: -2px;
+  color: #16a085;
+  font-size: 42px;
+  line-height: 40px;
+  animation: opacity 2s infinite;
+}
+
+.content__container:before {
+  content: '[';
+  left: -40px; /* أقواس في الخارج من اليسار */
+}
+
+.content__container:after {
+  content: ']';
+  right: -40px; /* أقواس في الخارج من اليمين */
+}
+
+.content__container__text {
+  display: inline-block;
+  float: left;
+  margin: 0;
+}
+
+.content__container__list {
+  margin: 0;
+  padding-left: 100px;
+  list-style: none;
+  text-align: left;
+  animation: change 10s infinite;
+}
+
+.content__container__list__item {
+  line-height: 40px;
+  margin: 0;
+}
+
+/* Animations */
+@keyframes opacity {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes change {
+  0%, 12.66%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  16.66%, 29.32% {
+    transform: translate3d(0, -25%, 0);
+  }
+  33.32%, 45.98% {
+    transform: translate3d(0, -50%, 0);
+  }
+  49.98%, 62.64% {
+    transform: translate3d(0, -75%, 0);
+  }
+  66.64%, 79.3% {
+    transform: translate3d(0, -50%, 0);
+  }
+  83.3%, 95.96% {
+    transform: translate3d(0, -25%, 0);
+  }
+}
+/* ////////////////////////////////////////////////////////less1 */
+.navbar-nav .nav-link {
+  font-size: 1.1rem;
+  padding: 10px 15px;
+  color: #fff;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #0d6efd;
+}
+.custom-btn {
+  width: 230px;
+  height: 60px;
+  background-color: #0d6efd;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.custom-btn:hover {
+  background-color: #0b5ed7;
+  transform: translateY(-2px);
+}
+/* ////////////////////////////////////less2 */
+.custom-btn {
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 8px;
+  transition: 0.3s;
+  font-size: 0.95rem;
+}
+
+.custom-btn:hover {
+  background-color: #0056b3;
+  color: #fff;
+  text-decoration: none;
+}

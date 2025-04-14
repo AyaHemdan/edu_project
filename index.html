@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>بيئات التعلم الالكتروني</title>
+
+    <!-- خطوط وأيقونات -->
+    <link rel="stylesheet" href="css/all.css"/>
+
+    <!-- تنسيقاتك الخاصة -->
+    <link rel="stylesheet" href="css/style.css"/>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    
+    <!-- أيقونات التواصل -->
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://whatsapp.com" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <!-- الهيدر -->
+    <header class="header">
+      <img src="images/22.jpeg" class="img-header" alt="شعار الموقع">
+      <ul class="ul-header">
+        <a href="connection.html" class="a-header"><li class="li-header">تواصل معنا</li></a>
+        <a href="who-we-are.html" class="a-header"><li class="li-header">من نحن</li></a>
+        <a href="introduction.html" class="a-header"><li class="li-header">نبذة تعريفية</li></a>
+        <a href="index.html" class="a-header"><li class="li-header">الرئيسية</li></a>
+      </ul>
+
+      <!-- زر الدخول -->
+      <div class="login-wrapper">
+        <button type="button" class="btn btn-primary"
+          data-bs-toggle="modal" data-bs-target="#myModal1"
+          title="إضغط هنا للتوصية"
+          style="background-color: #1b263b; border-color: #1b263b;"
+          onmouseover="this.style.backgroundColor='#1b263b'"
+          onmouseout="this.style.backgroundColor='#003566'">
+          login
+        </button>
+      </div>
+    </header>
+
+    <!-- نافذة الدخول -->
+    <div class="modal fade" id="myModal1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <!-- رأس النافذة -->
+          <div class="modal-header">
+            <h4 class="modal-title">login</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+          <!-- محتوى النافذة -->
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="email" class="form-label">البريد الإلكتروني</label>
+                <input type="email" class="form-control" id="email">
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">كلمة المرور</label>
+                <input type="password" class="form-control" id="password">
+              </div>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="rememberMe" checked>
+                <label class="form-check-label" for="rememberMe">تذكرني</label>
+              </div>
+            </form>
+          </div>
+
+          <!-- تذييل النافذة -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">إغلاق</button>
+            <button type="button" class="btn btn-primary">دخول</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- السلايدر -->
+    <div id="container1">
+      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="الشريحة 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="الشريحة 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="الشريحة 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="images/elearning-concept-business-man-holding-260nw-2192889551.jpeg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>بيئات التعلم الالكترونى</h5>
+              <p>مرحباً بك عزيزي الطالب في مقرر بيئات التعلم الالكتروني</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="images/eLearning-Graphic-scaled1.jpeg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>بيئات التعلم الالكترونى</h5>
+              <p>ستتعلم ما هي بيئات التعلم الالكتروني وأنواعها.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="images/Free  Blue, Business, Computer Background Images, Blue Business Computer Background Photo Background PNG and Vectors.jfif" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">السابق</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">التالي</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- زر التسجيل -->
+    <div id="div_reg_btn">
+      <a href="register.html"><button id="btn_reg">register</button></a>
+    </div>
+
+    <!-- سكريبتات Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
