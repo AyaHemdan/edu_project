@@ -7,39 +7,124 @@
     <link rel="stylesheet" href="css/all.css"/>
     <link rel="stylesheet" href="css/style.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <style>
+      /* تنسيقات الناف بار */
+      nav {
+        background-color: #021b2b;
+        padding: 10px 0;
+      }
+      nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.1rem;
+      }
+      nav a:hover {
+        color: #28a745;
+      }
+
+      /* الفقاعات */
+      .bubble {
+        position: absolute;
+        background-color: #28a745;
+        border-radius: 50%;
+        opacity: 0.5;
+        animation: float 5s infinite;
+      }
+      .bubble:nth-child(1) {
+        width: 100px;
+        height: 100px;
+        top: 20%;
+        left: 10%;
+        animation-duration: 6s;
+      }
+      .bubble:nth-child(2) {
+        width: 120px;
+        height: 120px;
+        top: 30%;
+        right: 15%;
+        animation-duration: 7s;
+      }
+      .bubble:nth-child(3) {
+        width: 90px;
+        height: 90px;
+        top: 50%;
+        left: 60%;
+        animation-duration: 8s;
+      }
+      .bubble:nth-child(4) {
+        width: 110px;
+        height: 110px;
+        top: 70%;
+        right: 10%;
+        animation-duration: 9s;
+      }
+      .bubble:nth-child(5) {
+        width: 80px;
+        height: 80px;
+        top: 80%;
+        left: 30%;
+        animation-duration: 10s;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      /* تنسيقات النصوص داخل القسم */
+      #div_who_we {
+        background-color: #021b2b;
+        color: white;
+      }
+      .text-center p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+      }
+    </style>
   </head>
-<body>
-  <!-- الناف بار -->
-  <nav class="nav d-flex justify-content-center align-items-center">
-    <ul class="d-flex m-0 p-0">
-      <li><a href="connection.html">تواصل معنا</a></li>
-      <li><a href="introduction.html" target="_blank">نبذة تعريفية</a></li>
-      <li><a href="index.html">الصفحة الرئيسية</a></li>
-    </ul>
-  </nav>
-  
+  <body>
+    <!-- الناف بار -->
+    <nav>
+      <ul>
+        <li><a href="connection.html">تواصل معنا</a></li>
+        <li><a href="introduction.html" target="_blank">نبذة تعريفية</a></li>
+        <li><a href="index.html">الصفحة الرئيسية</a></li>
+      </ul>
+    </nav>
 
-  <!-- محتوى من نحن -->
-  <div id="div_who_we" class="py-5">
-    <div class="container position-relative">
-      <!-- الفقاعات -->
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
+    <!-- محتوى من نحن -->
+    <div id="div_who_we" class="py-5">
+      <div class="container position-relative">
+        <!-- الفقاعات -->
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
 
-      <!-- النص -->
-      <div class="text-center mt-5">
-        <p class="fs-4">مرحبا عزيزي الطالب</p>
-        <p class="fs-5">
-          هذا الموقع يخدم الفئة الطلابية الجامعية لكلية التربية النوعية قسم تكنولوجيا التعليم والحاسب الآلي في مقرر بيئات التعلم الإلكتروني، ليدرس الطلاب بيئات التعلم الإلكتروني وأنواعها.
-        </p>
+        <!-- النص -->
+        <div class="text-center mt-5">
+          <p class="fs-4">مرحبا عزيزي الطالب</p>
+          <p class="fs-5">
+            هذا الموقع يخدم الفئة الطلابية الجامعية لكلية التربية النوعية قسم تكنولوجيا التعليم والحاسب الآلي في مقرر بيئات التعلم الإلكتروني، ليدرس الطلاب بيئات التعلم الإلكتروني وأنواعها.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- سكريبتات Bootstrap -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <!-- سكريبتات Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
