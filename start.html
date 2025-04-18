@@ -2,15 +2,16 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>start</title>
   <link rel="stylesheet" href="css/style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- تضمين أيقونات Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
   <style>
     body {
       background-color: #021b2b;
       color: white;
+      margin: 0;
+      padding: 0;
     }
 
     .button {
@@ -18,8 +19,6 @@
       color: white;
       border: none;
       padding: 10px 20px;
-      cursor: pointer;
-      text-align: center;
       width: 100%;
     }
 
@@ -27,13 +26,14 @@
       background-color: #216788;
     }
 
-    .card-img-top {
+    .card-img-top,
+    .card img {
+      height: 180px;
       object-fit: cover;
-      height: 200px;
     }
 
     .navbar {
-      background-color: #021b2b;
+      background-color: #182f3d;
     }
 
     .navbar-nav .nav-link {
@@ -44,33 +44,18 @@
       color: #17a58d !important;
     }
 
-    .card-body {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-/* لتجنب تداخل المحتويات في wrapper */
-.wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 0 auto;
-      padding: 20px;
-      max-width: 1200px; /* تحديد الحد الأقصى لعرض العنصر */
-    }
-
-    .content-wrapper {
-      width: 100%;
-      padding: 15px;
-      box-sizing: border-box;
-    }
-
-    .content__container {
-      text-align: center;
+    .wrapper {
+      padding: 20px 10px;
     }
 
     .content__container__list__item {
-      line-height: 1.5;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 576px) {
+      h1, .card-title {
+        font-size: 1.1rem;
+      }
     }
   </style>
 </head>
@@ -79,108 +64,86 @@
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="connection.html">تواصل معنا</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="introduction.html" target="_blank">نبذة تعريفية</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">الصفحة الرئيسية</a>
-          </li>
+      <a class="navbar-brand d-lg-none" href="#">القائمة</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav text-center">
+          <li class="nav-item"><a class="nav-link" href="connection.html">تواصل معنا</a></li>
+          <li class="nav-item"><a class="nav-link" href="introduction.html" target="_blank">نبذة تعريفية</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">الصفحة الرئيسية</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-   <!-- WRAPPER -->
-   <div class="wrapper container py-5">
-    <div class="content-wrapper mx-auto">
-      <div class="content">
-        <div class="content__container">
-          <p class="content__container__text">Hello</p>
-          <ul class="content__container__list">
-            <li class="content__container__list__item">student!</li>
-            <li class="content__container__list__item">learner!</li>
-            <li class="content__container__list__item">developer!</li>
-            <li class="content__container__list__item">friend!</li>
-          </ul>
-        </div>
-      </div>
+  <!-- WRAPPER -->
+  <div class="wrapper container py-4">
+    <div class="text-center mb-4">
+      <p class="fs-4">مرحبًا بك</p>
+      <p class="fs-5">اختر أحد الدروس التالية لبدء التعلم:</p>
     </div>
 
-
     <!-- SHOWCASE -->
-    <section class="container my-5">
-      <h1 class="text-center text-white mb-4">أنواع بيئات التعلم الإلكتروني</h1>
-      <div class="row g-4">
+    <section>
+      <h2 class="text-center text-white mb-4">أنواع بيئات التعلم الإلكتروني</h2>
+      <div class="row g-3">
 
-        <!-- كل درس داخل عمود متجاوب -->
-        <div class="col-md-4 col-sm-6">
-          <div class="card h-100 text-center bg-dark text-white border-0">
+        <!-- درس واحد -->
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card bg-dark text-white h-100">
+            <img src="images/OIP2.jpeg" class="card-img-top rounded border border-light" alt="التعلم التكيفي">
             <div class="card-body d-flex flex-column">
-              <h3 class="card-title">الدرس الأول التعلم التكيفي</h3>
-              <img src="images/OIP2.jpeg" class="img-fluid mb-3 rounded border border-light" alt="التعلم التكيفي">
-              <div class="mt-auto">
-                <a href="lesson1.html"><button class="button">ابدأ الآن</button></a>
-              </div>
+              <h5 class="card-title">الدرس الأول: التعلم التكيفي</h5>
+              <a href="lesson1.html" class="mt-auto"><button class="button">ابدأ الآن</button></a>
             </div>
           </div>
         </div>
 
-        <div class="col-md-4 col-sm-6">
-          <div class="card h-100 text-center bg-dark text-white border-0">
+        <!-- باقي الدروس -->
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card bg-dark text-white h-100">
+            <img src="images/OIP (1).jpeg" class="card-img-top rounded border border-light" alt="بيئات التعلم النقال">
             <div class="card-body d-flex flex-column">
-              <h3 class="card-title">الدرس الثاني بيئات التعلم النقال</h3>
-              <img src="images/OIP (1).jpeg" class="img-fluid mb-3 rounded border border-light" alt="بيئات التعلم النقال">
-              <div class="mt-auto">
-                <a href="lesson2.html"><button class="button">ابدأ الآن</button></a>
-              </div>
+              <h5 class="card-title">الدرس الثاني: بيئات التعلم النقال</h5>
+              <a href="lesson2.html" class="mt-auto"><button class="button">ابدأ الآن</button></a>
             </div>
           </div>
         </div>
 
-        <div class="col-md-4 col-sm-6">
-          <div class="card h-100 text-center bg-dark text-white border-0">
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card bg-dark text-white h-100">
+            <img src="images/eLearning-Graphic-scaled1.jpeg" class="card-img-top rounded border border-light" alt="بيئات التعلم المصغر">
             <div class="card-body d-flex flex-column">
-              <h3 class="card-title">الدرس الثالث بيئات التعلم المصغر</h3>
-              <img src="images/eLearning-Graphic-scaled1.jpeg" class="img-fluid mb-3 rounded border border-light" alt="بيئات التعلم المصغر">
-              <div class="mt-auto">
-                <a href="lesson3.html"><button class="button">ابدأ الآن</button></a>
-              </div>
+              <h5 class="card-title">الدرس الثالث: بيئات التعلم المصغر</h5>
+              <a href="lesson3.html" class="mt-auto"><button class="button">ابدأ الآن</button></a>
             </div>
           </div>
         </div>
 
-        <div class="col-md-4 col-sm-6">
-          <div class="card h-100 text-center bg-dark text-white border-0">
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card bg-dark text-white h-100">
+            <img src="images/elearning-concept-business-man-holding-260nw-2192889551.jpeg" class="card-img-top rounded border border-light" alt="بيئات التعلم المنتشر">
             <div class="card-body d-flex flex-column">
-              <h3 class="card-title">الدرس الرابع بيئات التعلم المنتشر</h3>
-              <img src="images/elearning-concept-business-man-holding-260nw-2192889551.jpeg" class="img-fluid mb-3 rounded border border-light" alt="بيئات التعلم المنتشر">
-              <div class="mt-auto">
-                <a href="lesson4.html"><button class="button">ابدأ الآن</button></a>
-              </div>
+              <h5 class="card-title">الدرس الرابع: بيئات التعلم المنتشر</h5>
+              <a href="lesson4.html" class="mt-auto"><button class="button">ابدأ الآن</button></a>
             </div>
           </div>
         </div>
 
-        <div class="col-md-4 col-sm-6">
-          <div class="card h-100 text-center bg-dark text-white border-0">
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card bg-dark text-white h-100">
+            <img src="images/background.jpeg" class="card-img-top rounded border border-light" alt="بيئة التعلم المدمج">
             <div class="card-body d-flex flex-column">
-              <h3 class="card-title">الدرس الخامس بيئات التعلم المدمج</h3>
-              <img src="images/background.jpeg" class="img-fluid mb-3 rounded border border-light" alt="بيئة التعلم المدمج">
-              <div class="mt-auto">
-                <a href="lesson5.html"><button class="button">ابدأ الآن</button></a>
-              </div>
+              <h5 class="card-title">الدرس الخامس: بيئة التعلم المدمج</h5>
+              <a href="lesson5.html" class="mt-auto"><button class="button">ابدأ الآن</button></a>
             </div>
           </div>
         </div>
 
       </div>
     </section>
-
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
